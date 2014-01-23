@@ -1,0 +1,170 @@
+<html>
+<head>
+<style type="text/css">
+span{
+	display:block;
+}
+
+.span_azul{
+	background-color:#87CEFA;
+}
+.span_branco{
+	background-color:white;
+}
+.span_amarelo{
+	background-color:yellow;
+}
+#meses{
+	margin-top: 50px;
+}
+
+#dia{
+	height:20px; 
+	font-size: 20px;
+}
+#mes{
+	height:50px; 
+	font-size: 30px;
+}
+</style>
+<script>
+function load()
+{
+	var data = window.prompt('Informe a data(dd/mm/YYYY)');
+	if(data != ''){
+		var data_aux = data.split('/');
+		var dia = parseInt(data_aux[0]);
+		var mes = parseInt(data_aux[1]);
+		var ano = parseInt(data_aux[2]);
+			if(dia!='' && mes!='' && ano !=''){
+					document.getElementById('dia').innerHTML="Dia: "+dia;
+					document.getElementById('dia').style.background='red';
+
+					document.getElementById('mes').innerHTML="Mes: "+mes;
+					document.getElementById('mes').style.background='green';
+
+					document.getElementById('ano').innerHTML="Ano: "+ano;
+					document.getElementById('ano').style.background='blue';
+
+				var i = 1;
+				var html = '';
+				while(i <= 12 ){
+					if(i == mes){
+						document.getElementById('mes'+i).style.background='yellow';
+					}	
+
+					if(mes == 1)
+						var nomeMes = 'Janeiro';
+					else if(mes == 2)
+						var nomeMes = 'Fevereiro';
+					else if(mes == 3)
+						var nomeMes = 'Marco';
+					else if(mes == 4)
+						var nomeMes = 'Abril';
+					else if(mes == 5)
+						var nomeMes = 'Maio';
+					else if(mes == 6)
+						var nomeMes = 'Junho';
+					else if(mes == 7)
+						var nomeMes = 'Julho';
+					else if(mes == 8)
+						var nomeMes = 'Agosto';
+					else if(mes == 9)
+						var nomeMes = 'Setembro';
+					else if(mes == 10)
+						var nomeMes = 'Outubro';
+					else if(mes == 11)
+						var nomeMes = 'Novembro';
+					else if(mes == 12)
+						var nomeMes = 'Dezembro';
+
+					var mes_inicio='<span class="span_amarelo">'+nomeMes+'</span>';
+					document.getElementById('meses').innerHTML=mes_inicio;
+					
+					i++;
+				}
+				if(mes == 12)
+					var j = 1;
+				else
+					var j = mes+1;
+
+				while(j <= 12){
+					if(j==mes){
+						break;
+					}
+					if(j == 1)
+						var nomeMes = 'Janeiro';
+					else if(j == 2)
+						var nomeMes = 'Fevereiro';
+					else if(j == 3)
+						var nomeMes = 'Marco';
+					else if(j == 4)
+						var nomeMes = 'Abril';
+					else if(j == 5)
+						var nomeMes = 'Maio';
+					else if(j == 6)
+						var nomeMes = 'Junho';
+					else if(j == 7)
+						var nomeMes = 'Julho';
+					else if(j == 8)
+						var nomeMes = 'Agosto';
+					else if(j == 9)
+						var nomeMes = 'Setembro';
+					else if(j == 10)
+						var nomeMes = 'Outubro';
+					else if(j == 11)
+						var nomeMes = 'Novembro';
+					else if(j == 12)
+						var nomeMes = 'Dezembro';
+
+					if(j%2==0)
+						var meses ='<span class="span_azul">'+nomeMes+'</span>';
+					else
+						var meses ='<span class="span_branco">'+nomeMes+'</span>';
+					document.getElementById('meses').innerHTML+=meses;
+
+					if(j == 12){
+						j=0;
+					}
+					j++;
+				}
+			}else{
+				alert('Informe dia, mes e ano');
+			}
+	}else{
+		alert('Informe uma data');	
+
+	}
+}
+
+
+
+</script>
+</head>
+<body onload="load();">
+
+<div id="dia"></div>
+<div id="mes"></div>
+<div id="ano"></div>
+
+<div style="display:none" id="anos">
+	<span id="mes1" class="span_branco">Janeiro</span>
+	<span id="mes2" class="span_azul">Fevereiro</span>
+	<span id="mes3" class="span_branco">Marco</span>
+	<span id="mes4" class="span_azul">Abril</span>
+	<span id="mes5" class="span_branco">Maio</span>
+	<span id="mes6" class="span_azul">Junho</span>
+	<span id="mes7" class="span_branco">Julho</span>
+	<span id="mes8" class="span_azul">Agosto</span>
+	<span id="mes9" class="span_branco">Setembro</span>
+	<span id="mes10" class="span_azul">Outubro</span>
+	<span id="mes11" class="span_branco">Novembro</span>
+	<span id="mes12" class="span_azul">Dezembro</span>
+</div>
+
+<div id="meses">
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+   <head>
+     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+ 
+     <style type="text/css">
+	.window{
+	    display:none;
+	    width:300px;
+	    height:300px;
+	    position:absolute;
+    
+	    background:#FFF;
+	    z-index:9900;
+	    padding:10px;
+	    border-radius:10px;
+        }
+ 
+        #caixa{
+	    display:none;
+	    position:absolute;
+	    left:0;
+	    top:0;
+	    z-index:9000;
+	    background-color:#000;
+	}
+ 
+	.fechar{display:block; text-align:right;}
+     </style>
+
+    <script type="text/javascript">
+
+	$(document).ready(function(){
+		$("a[rel=modal]").click( function(ev){
+			ev.preventDefault();
+			var id = $(this).attr("href");
+			var alturaTela = $(document).height();
+			var larguraTela = $(window).width();
+			$('#caixa').css({'width':larguraTela,'height':alturaTela});
+			$('#caixa').show(1000);
+			$(id).css('top',alturaTela/4);
+			$(id).css({'right':'0'});
+			$(id).show(2000);  
+		});
+
+		$("#caixa").click( function(){
+			$(this).hide();
+			$(".window").hide();
+		});
+	
+		$('.fechar').click(function(ev){
+			ev.preventDefault();
+			$("#caixa").hide(500);
+			$(".window").hide(500);
+		});
+         });
+      </script>
+   </head>
+   <body>
+      <a href="#dialogo" rel="modal">clique pra ver quem é o autor disso</a>
+         <div class="window" id="dialogo">
+            <a href="#" class="fechar">X Fechar</a>
+            <h4>Carlos Vitor de Souza</h4>
+         </div>
+	 <div id="caixa"></div>
+   </body>
+</html>

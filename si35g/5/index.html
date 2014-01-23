@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style type="text/css" media="screen">
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			li ul {
+				position: absolute;
+				left: 150px;
+				top: 0;
+				display: none;
+			}
+
+			ul li {
+				position: relative;
+				display: block;
+				border: 1px solid #ccc;
+				border-bottom: 0;
+				height: 150px;
+				width: 150px;
+			}
+
+			li:hover ul { 
+				display: block;
+
+			}
+
+			li:hover ul, li.over ul { 
+				display: block;
+			}
+
+			.azul {
+				background-color: blue;
+			}
+
+			.vermelho {
+				background-color: red;
+			}
+
+			.verde {
+				background-color: green;
+			}
+
+			.amarelo {
+				background-color: yellow;
+			}
+
+			.cinza {
+				background-color: gray;
+			}
+
+			.cinza:hover {
+				background-color: aquamarine;
+			}
+		</style>
+	</head>
+	<body>
+		<ul> 
+
+			<li class="vermelho"> 
+			<ul> 
+				<li class="cinza"></li> 
+				<li class="cinza"></li> 
+				<li class="cinza"></li> 
+			</ul> 
+			</li> 
+
+			<li class="verde"> 
+			<ul> 
+				<li class="cinza"></li> 
+				<li class="cinza"></li> 
+				<li class="cinza"></li> 
+			</ul> 
+			</li>
+
+			<li class="azul">
+			<ul> 
+				<li class="cinza"></li> 
+				<li class="cinza"></li> 
+				<li class="cinza"></li> 
+			</ul> 
+			</li> 
+
+			<li class="amarelo">
+			<ul>
+				<li class="cinza"></li>
+				<li class="cinza"></li>
+				<li class="cinza"></li>
+
+			</ul>
+			</li>
+		</ul>
+	</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+    "nome": "Paran\u00e1",
+    "sigla": "PR",
+    "capital": "Curitiba",
+    "regiao": "Sul",
+    "cidades": [
+        {
+            "nome": "SI35A"
+        }    ]
+}
+
